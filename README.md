@@ -29,6 +29,12 @@ Part C contains the "Chat Manage" interface, "Family Chat 1" interface, "Family 
 
 Part D is made up of the "Road" interface, "Recommend" interface, and "Place Recommend" interface. This section allows users to navigate to attractions and get recommendations for nearby restaurants and attractions based on their location and navigation information. If time permits, users can visit additional attractions suggested by the system.
 
-![Description of the image](https://github.com/vvvcccttt/DECO3500/blob/main/prototype/Picture1.png)
+![Part A](https://github.com/vvvcccttt/DECO3500/blob/main/prototype/Picture1.png)
+
+![Part B](https://github.com/vvvcccttt/DECO3500/blob/main/prototype/Picture2.png)
+
+![Part C](https://github.com/vvvcccttt/DECO3500/blob/main/prototype/Picture4.png)
+
+![Part D](https://github.com/vvvcccttt/DECO3500/blob/main/prototype/Picture3.png)
 
 [Introduction to How the Prototype is Used](https://github.com/vvvcccttt/DECO3500/wiki/%22FamTrip%22-Design-Process-Overview#high-fidelity-prototypes)
