@@ -11,6 +11,7 @@ The **"Team_Presentation_1_PowerPoint"** folder showcases the proposal slides, w
 The **"Prototype"** folder displays images of sketches, low-fidelity prototypes, medium-fidelity prototypes, and high-fidelity prototypes (Picture1, Picture2, Picture3, Picture4).
 
 ## Overview of Hyperlinks in Document Structure
+[ Document Structure Page](https://github.com/vvvcccttt/DECO3500/wiki/Document-Structure-Page)
 
 
 ## Overview of Hyperlinks in the Project
