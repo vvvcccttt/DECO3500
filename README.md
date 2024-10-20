@@ -15,5 +15,6 @@ The **"Prototype"** folder displays images of sketches, low-fidelity prototypes,
 
 
 ## Overview of Hyperlinks in the Project
+[ Project Overview](https://github.com/vvvcccttt/DECO3500/wiki)
 
 ## Deployment and Usage of the Prototype
