@@ -9,3 +9,10 @@ The **"Team_Charter"** folder contains the team's charter, including the team ov
 The **"Team_Presentation_1_PowerPoint"** folder showcases the proposal slides, which are the outcome of the team’s design proposal assignment. 
 
 The **"Prototype"** folder displays images of sketches, low-fidelity prototypes, medium-fidelity prototypes, and high-fidelity prototypes (Picture1, Picture2, Picture3, Picture4).
+
+## Overview of Hyperlinks in Document Structure
+
+
+## Overview of Hyperlinks in the Project
+
+## Deployment and Usage of the Prototype
