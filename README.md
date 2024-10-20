@@ -1,4 +1,5 @@
 # DECO3500
+###The repository 
 The repository contains folders such as **"Persona,"** **"Team_Charter,"** **"Team_Presentation_1_PowerPoint,"** and **"Prototype."** 
 
 The **"Persona"** folder includes the "user personas" we created for the users. 
