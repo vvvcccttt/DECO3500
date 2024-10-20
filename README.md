@@ -19,4 +19,4 @@ The **"Prototype"** folder displays images of sketches, low-fidelity prototypes,
 
 ## Deployment and Usage of the Prototype
 
-[原型如何使用的介绍](https://github.com/vvvcccttt/DECO3500/wiki/%22FamTrip%22-Design-Process-Overview#high-fidelity-prototypes)
+[Introduction to How the Prototype is Used](https://github.com/vvvcccttt/DECO3500/wiki/%22FamTrip%22-Design-Process-Overview#high-fidelity-prototypes)
