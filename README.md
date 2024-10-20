@@ -19,4 +19,14 @@ The **"Prototype"** folder displays images of sketches, low-fidelity prototypes,
 
 ## Deployment and Usage of the Prototype
 
+The prototype is divided into four parts:
+
+Part A consists of the "Login (Welcome)" interface, "Login" interface, "Join" interface, "Sign up" interface, and "Slogan" interface. This section primarily focuses on login methods, registration information, or joining an existing travel plan.
+
+Part B includes the "Input1" interface, "Input2" interface, "Input Room/Food/Place" interface, "Input example" interface, "Outline" interface, and "Plan Home" interface. Part B mainly covers the itinerary setup process for users. Based on the inputted destination and travel preferences (such as budget and accommodation style), the system creates a personalized travel plan for the user.
+
+Part C contains the "Chat Manage" interface, "Family Chat 1" interface, "Family Chat 2" interface, "Vote" interface, "Family Chat 3" interface, "Family Chat 4" interface, and "Position" interface. Family members can collaborate on or adjust the travel plan through chatting, and voting, and can communicate or check each other's location at any time.
+
+Part D is made up of the "Road" interface, "Recommend" interface, and "Place Recommend" interface. This section allows users to navigate to attractions and get recommendations for nearby restaurants and attractions based on their location and navigation information. If time permits, users can visit additional attractions suggested by the system.
+
 [Introduction to How the Prototype is Used](https://github.com/vvvcccttt/DECO3500/wiki/%22FamTrip%22-Design-Process-Overview#high-fidelity-prototypes)
