@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Review</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 返回按钮 -->
+        <div class="back-btn">
+            <a href="../map.html">&lt;</a>
+        </div>
+
+
+        <!-- 图片和评分 -->
+        <div class="restaurant-header">
+            <img src="Rectangle 35.png" alt="Restaurant Image" class="restaurant-img">
+            <div class="rating">
+                <span>4.1★</span>
+            </div>
+        </div>
+
+        <!-- 餐厅信息 -->
+        <div class="restaurant-info">
+            <h1>Restaurant</h1>
+            <p>4.5km &nbsp; $58</p>
+        </div>
+
+        <!-- 评论列表 -->
+        <div class="review-list">
+            <div class="review-item">
+                <img src="zhen hao chi.png" alt="User 1" class="user-img">
+                <div class="review-text">
+                    <h3>Zhen hao chi</h3>
+                    <p>It tastes great. I like it very much！！！</p>
+                </div>
+                <div class="rating-stars">★★★★★</div>
+            </div>
+
+            <div class="review-item">
+                <img src="hai bu cuo.png" alt="User 2" class="user-img">
+                <div class="review-text">
+                    <h3>Hai bu cuo</h3>
+                    <p>It tastes great. I like it very much！！！</p>
+                </div>
+                <div class="rating-stars">★★★★☆</div>
+            </div>
+
+            <div class="review-item">
+                <img src="zei xiang le.png" alt="User 3" class="user-img">
+                <div class="review-text">
+                    <h3>Zei xiang le</h3>
+                    <p>It tastes great. I like it very much！！！</p>
+                </div>
+                <div class="rating-stars">★★★☆☆</div>
+                <div class="action-buttons">
+                    <button class="heart-btn" id="like-btn">
+                        <img src="like.png" alt="Like">
+                    </button>
+                    <button class="comment-btn" id="comment-btn">
+                        <img src="comment.png" alt="comment" class="icon">
+                    </button>
+                </div>
+
+                <div class="comment-input-container" id="comment-container">
+                    <input type="text" class="comment-input" placeholder="Type your comment..." />
+                    <button class="send-btn">Send</button>
+                </div>
+                
+                
+            </div>
+
+        </div>
+    </div>
+    <script src="recommend_script.js"></script>
+
+</body>
+</html>

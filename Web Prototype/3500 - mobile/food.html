@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Preferences</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 320px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); 
+            border-radius: 10px;
+            text-align: center;
+            background-image: url('image/9.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+        }
+
+        .header {
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .options-group {
+            margin-bottom: 20px;
+        }
+
+        .options-group div {
+            margin-bottom: 10px;
+        }
+
+        .toggle-option {
+            display: inline-block;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .toggle-option.active {
+            background-color: #00a0e9;
+            color: white;
+        }
+
+        .save-button {
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function toggleOption(optionId) {
+            const element = document.getElementById(optionId);
+            element.classList.toggle('active');
+        }
+
+        function savePreferences() {
+            const selectedOptions = [];
+            document.querySelectorAll('.toggle-option.active').forEach(option => {
+                selectedOptions.push(option.innerText);
+            });
+
+            // 保存选择的内容到 localStorage
+            localStorage.setItem('selectedFoodOptions', selectedOptions.join(', '));
+
+            // 跳转回 input2.html 页面
+            window.location.href = 'input2.html';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Food</h1>
+        </div>
+
+        <div class="options-group">
+            <h3>Restaurant Type</h3>
+            <div id="restaurant-options">
+                <div id="local" class="toggle-option" onclick="toggleOption('local')">Local Specialty</div>
+                <div id="indigenous" class="toggle-option" onclick="toggleOption('indigenous')">Indigenous Cuisine</div>
+                <div id="international" class="toggle-option" onclick="toggleOption('international')">International Cuisine</div>
+                <div id="fastfood" class="toggle-option" onclick="toggleOption('fastfood')">Fast Food</div>
+                <div id="seafood" class="toggle-option" onclick="toggleOption('seafood')">Seafood</div>
+                <div id="vegetarian" class="toggle-option" onclick="toggleOption('vegetarian')">Vegetarian Restaurant</div>
+            </div>
+        </div>
+
+        <div class="options-group">
+            <h3>Dietary Habit</h3>
+            <div id="diet-options">
+                <div id="vegetarian-habit" class="toggle-option" onclick="toggleOption('vegetarian-habit')">Vegetarian</div>
+                <div id="halal" class="toggle-option" onclick="toggleOption('halal')">Halal</div>
+                <div id="glutenfree" class="toggle-option" onclick="toggleOption('glutenfree')">Gluten-Free</div>
+            </div>
+        </div>
+
+        <button class="save-button" onclick="savePreferences()">Save</button>
+    </div>
+</body>
+</html>

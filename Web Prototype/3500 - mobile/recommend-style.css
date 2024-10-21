@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+.recommend-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.recommend-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.recommend-box h3 {
+    margin-bottom: 10px;
+}
+
+.recommend-box p {
+    margin-bottom: 15px;
+}
+
+.recommend-box.expanded {
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+.family-likes {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.family-likes img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.like-count {
+    font-size: 14px;
+    color: #555;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.icon {
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.icon:hover {
+    background-color: #e0e0e0;
+}
+
+.icon img {
+    width: 50px;
+    height: 50px;
+}
+
+.icon-text {
+    margin-top: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.icon-text a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* 适应手机端 */
+@media (max-width: 768px) {
+    .recommend-container {
+        grid-template-columns: 1fr;
+    }
+
+    .icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .icon img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .icon-text {
+        font-size: 12px;
+    }
+}
+
+/* 更小的屏幕适配 */
+@media (max-width: 480px) {
+    .recommend-container {
+        grid-template-columns: 1fr;
+    }
+
+    .icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .icon img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .icon-text {
+        font-size: 10px;
+    }
+}

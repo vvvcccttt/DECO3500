@@ -1,0 +1,97 @@
+/* 确保地图容器有高度 */
+#map {
+    position: absolute;
+    top: 0px; /* 确保地图从筛选按钮的下方开始 */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: calc(100vh - 120px); /* 使用动态计算高度，确保地图占据剩余空间 */
+    background-color: #eee;
+    z-index: -1；
+}
+
+
+/* 返回按钮样式 */
+.back-btn {
+    position: absolute;
+    top: 10px;  /* 返回按钮距离顶部10px */
+    left: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10; /* 确保返回按钮显示在地图上方 */
+}
+
+.back-btn img {
+    width: 15px;
+    height: 15px;
+}
+
+/* 搜索栏样式 */
+.search-bar {
+    position: absolute;
+    top: 60px;  /* 搜索栏距离返回按钮下方50px */
+    left: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1; /* 确保搜索栏浮动在地图上方 */
+}
+
+#search {
+    border: none; /* 移除黑色细框 */
+    outline: none; /* 移除聚焦时的外边框 */
+    flex-grow: 1;
+    padding-left: 10px;
+    background-color: transparent; /* 确保输入框透明，背景与外框一致 */
+}
+
+.search-btn {
+    background-color: white; /* 设置背景为白色，保持与搜索栏一致 */
+    border: none; /* 移除按钮边框 */
+    outline: none; /* 取消聚焦边框 */
+    cursor: pointer;
+}
+
+.search-btn img {
+    width: 15px; /* 调整放大镜图标大小 */
+    height: 15px;
+}
+
+/* 筛选按钮样式 */
+.filter-buttons {
+    position: absolute;
+    top: 120px;  /* 筛选按钮距离搜索栏下方60px */
+    left: 10px;
+    display: flex;
+    gap: 10px; /* 按钮之间的间距 */
+    z-index: 1; /* 确保按钮浮动在地图上方 */
+}
+
+.filter-btn {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filter-btn img {
+    width: 24px;
+    height: 24px;
+}
+
+/* 响应式设计，模拟手机屏幕 */
+@media (max-width: 400px) {
+    .app-container {
+        width: 100%;
+        height: 100vh;
+    }
+}

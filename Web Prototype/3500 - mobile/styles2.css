@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 320px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-image: url('https://www.example.com/map-background.jpg'); 
+    background-size: cover;
+    background-position: center;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.header p:first-child {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.header p:last-child {
+    font-size: 16px;
+    color: gray;
+}
+
+.form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.save-button {
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+
+
+.toggle-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.toggle-label {
+    flex: 1;
+    padding: 5px 10px; /* 调整按钮的内边距，减小按钮尺寸 */
+    border-radius: 15px; /* 更小的圆角 */
+    background-color: #e0e0e0;
+    cursor: pointer;
+    text-align: center;
+    font-size: 12px; /* 缩小字体大小 */
+}
+
+.active {
+    background-color: #00a0e9;
+    color: white;
+}
+
+.question-button {
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    right: -10px; /* 让问号按钮向右侧移动，避免重叠 */
+}
+
+.question-button .tooltip {
+    display: none;
+    position: absolute;
+    top: -80px;
+    right: 0;
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.question-button.active .tooltip {
+    display: block;
+}
+
+.close-tooltip {
+    cursor: pointer;
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    color: #ff6347;
+}
+
+.plus-button {
+    border: none;
+    background-color: transparent;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: -10px;
+    right: -20px;
+}
+
+.container {
+    background-image: url('image/index1.png');
+    background-size: cover;
+    background-position: center;
+}

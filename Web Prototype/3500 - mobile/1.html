@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Input</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            width: 360px;
+            height: 640px;
+            background: linear-gradient(to bottom, #a7d8ff, #fff);
+            background-image: url('image/index1.png');
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .header {
+            margin-bottom: 20px;
+        }
+
+        .header p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        .form {
+            background-color: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            font-size: 14px;
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        .input-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .input-box input {
+            width: 80%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .plus-button {
+            padding: 5px 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .plus-button:hover {
+            background-color: #2980b9;
+        }
+
+        .next-button {
+            width: 100%;
+            padding: 15px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .next-button:hover {
+            background-color: #333;
+        }
+    </style>
+    <script>
+        // Function to check both country and city inputs
+        function checkAndRedirect() {
+            const country = document.getElementById('country').value;
+            const cities = document.querySelectorAll('.input-box input[type="text"]');
+            let cityFilled = false;
+
+            cities.forEach(city => {
+                if (city.value) {
+                    cityFilled = true;
+                }
+            });
+
+            if (country && cityFilled) {
+                window.location.href = 'input2.html';
+            } else {
+                alert('Please fill in both country and city.');
+            }
+        }
+
+        // Function to dynamically add new city input fields
+        function addCityInput() {
+            const inputGroup = document.getElementById('city-box');
+            const newInputBox = document.createElement('div');
+            newInputBox.className = 'input-box';
+            newInputBox.innerHTML = `
+                <input type="text" placeholder="Enter city">
+                <button class="plus-button" onclick="addCityInput()">+</button>
+            `;
+            inputGroup.appendChild(newInputBox);
+        }
+
+        // Function to dynamically add new country input fields (if needed)
+        function addCountryInput() {
+            const countryInputBox = document.getElementById('country-box');
+            const newInputBox = document.createElement('div');
+            newInputBox.className = 'input-box';
+            newInputBox.innerHTML = `
+                <input type="text" placeholder="Enter country">
+                <button class="plus-button" onclick="addCountryInput()">+</button>
+            `;
+            countryInputBox.appendChild(newInputBox);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <p>Hi~</p>
+            <p>Input location you want</p>
+        </div>
+        <div class="form">
+            <!-- Country Input -->
+            <div class="input-group" id="country-box">
+                <label for="country">Country</label>
+                <div class="input-box">
+                    <input type="text" id="country" placeholder="Enter country">
+                    <button class="plus-button" onclick="addCountryInput()">+</button>
+                </div>
+            </div>
+
+            <!-- City Input -->
+            <div class="input-group" id="city-box">
+                <label>City</label>
+                <div class="input-box">
+                    <input type="text" placeholder="Enter city">
+                    <button class="plus-button" onclick="addCityInput()">+</button>
+                </div>
+            </div>
+
+            <!-- Next Button -->
+            <button class="next-button" onclick="checkAndRedirect()">Next</button>
+        </div>
+    </div>
+</body>
+</html>

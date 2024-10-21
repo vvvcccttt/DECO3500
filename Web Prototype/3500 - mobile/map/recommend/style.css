@@ -1,0 +1,188 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+/* 返回按钮 */
+.back-btn {
+    padding: 10px;
+    font-size: 20px;
+    position: relative;
+}
+
+/* 餐厅头部图片和评分 */
+.restaurant-header {
+    position: relative;
+    text-align: center;
+}
+
+.restaurant-img {
+    width: 100%; /* 让图片适应父容器宽度 */
+    height: auto; /* 保持图片比例 */
+    border-radius: 15px; /* 圆角效果 */
+}
+
+
+.rating {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 餐厅信息 */
+.restaurant-info {
+    padding: 10px;
+    text-align: center;
+}
+
+.restaurant-info h1 {
+    font-size: 24px;
+}
+
+.restaurant-info p {
+    font-size: 16px;
+    color: gray;
+}
+
+/* 评论列表 */
+.review-list {
+    padding: 10px;
+}
+
+.review-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.user-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.review-text h3 {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.review-text p {
+    font-size: 14px;
+    color: gray;
+}
+
+.rating-stars {
+    margin-left: auto;
+    font-size: 20px;
+    color: gold;
+}
+
+/* 固定右下角的操作按钮，竖着排列 */
+.action-buttons {
+    position: fixed;
+    bottom: 40px; /* 距离页面底部 20px */
+    right: 60px; /* 向左移动了一些 */
+    display: flex;
+    flex-direction: column; /* 竖直排列按钮 */
+    gap: 10px; /* 按钮之间的间距 */
+    z-index: 1000; /* 确保按钮浮在评论内容之上 */
+}
+
+/* 确保按钮容器也是圆形 */
+.heart-btn, .comment-btn {
+    width: 60px; /* 调整按钮的尺寸 */
+    height: 60px; /* 调整按钮的尺寸 */
+    border-radius: 50%; /* 确保按钮本身为圆形 */
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.heart-btn.active {
+    background-color: rgba(255, 0, 0, 0.2); /* 透明淡红色 */
+}
+
+/* 图片样式简化 */
+.heart-btn img, .comment-btn img {
+    width: 30px;
+    height: 30px;
+}
+
+.heart-btn:hover, .comment-btn:hover {
+    background-color: #e0e0e0;
+}
+.heart-btn.active {
+    background-color: rgba(255, 0, 0, 0.2); /* 透明淡红色 */
+}
+
+/* 输入框容器样式 */
+.comment-input-container {
+    display: none; /* 默认隐藏 */
+    position: fixed;
+    bottom: 100px; /* 距离页面底部一定距离 */
+    left: 10%;
+    width: 80%;
+    background-color: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    z-index: 1000; /* 确保浮在其他内容上方 */
+}
+
+/* 输入框样式 */
+.comment-input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+/* Send 按钮样式 */
+.send-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.send-btn:hover {
+    background-color: #0056b3;
+}
+
+

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Chat</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        /* Header Container */
+        .header-container {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 60px;
+            background: linear-gradient(90deg, #037EA4 0%, #44AEC2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+        .back-button {
+            width: 40px;
+            height: 40px;
+            background: url('image/left.jpg') no-repeat center center;
+            background-size: contain;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .header-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: white;
+            margin-right: 10px;
+        }
+
+        .header-text h1 {
+            font-size: 18px;
+            color: white;
+            margin: 0;
+        }
+
+        .header-text .status {
+            font-size: 12px;
+            color: #E0F4FC;
+            margin-top: 5px;
+        }
+
+        /* Chat Container */
+        .chat-container {
+            padding: 80px 20px 80px; /* Adjusted padding for fixed header and footer */
+            background-color: #f9f9f9;
+            height: calc(100% - 160px); /* Account for header and footer height */
+            overflow-y: auto;
+        }
+
+        /* Chat Bubble */
+        .message {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .message img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .bubble {
+            max-width: 70%;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #E0ECF8;
+            color: #333;
+        }
+
+        /* Align Self Messages */
+        .message.self {
+            justify-content: flex-end;
+        }
+
+        .message.self .bubble {
+            background-color: #F1F1F1;
+        }
+
+        .message.self img {
+            margin-left: 10px;
+            margin-right: 0;
+        }
+
+        /* Vote Module Style */
+        .vote-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: #E0F4FC;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .vote-options {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            width: 80%;
+        }
+
+        .vote-options .option {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .vote-options .option label {
+            margin-left: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .vote-options input[type="radio"] {
+            width: 20px;
+            height: 20px;
+        }
+
+        .vote-options .option:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Avatar for vote creator */
+        .vote-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-left: 10px;
+        }
+
+        /* Vote Result Box */
+        .vote-result {
+            background-color: #f1f1f1;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Footer Input Box */
+        .input-container {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #F9F9F9;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-container .message-input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+
+        .emoji-btn, .mic-btn {
+            background-color: transparent;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        .emoji-btn {
+            margin-right: 5px;
+        }
+
+        .add-btn {
+            background-color: transparent;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .send-btn {
+            background-color: #28A745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .header-container h1 {
+                font-size: 16px;
+            }
+
+            .header-container .status {
+                font-size: 10px;
+            }
+
+            .message img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .bubble {
+                max-width: 80%;
+                padding: 8px;
+            }
+
+            .input-container .message-input {
+                padding: 8px;
+            }
+
+            .send-btn {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>  
+        <div class="header-container">
+            <!-- Back Button -->
+            <div class="back-button" onclick="goBack()"></div> <!-- Back button -->
+
+            <!-- Header Info (Avatar, Family Name, Status) -->
+            <div class="header-info">
+                <img class="header-avatar" src="image/chat4.png" alt="Avatar">  
+                <div class="header-text">
+                    <h1>Family name</h1>  
+                    <span class="status">Typing...</span>  
+                </div>  
+            </div>
+        </div>  
+    </header>
+
+    <!-- Chat Container -->
+    <div class="chat-container">
+        <!-- Message 1 -->
+        <div class="message">
+            <img src="image/chat1.png" alt="Avatar">
+            <div class="bubble">How about going to this scenic spot?</div>
+        </div>
+
+        <!-- Message 2 -->
+        <div class="message">
+            <img src="image/chat2.png" alt="Avatar">
+            <div class="bubble">It seems all right...</div>
+        </div>
+
+        <!-- Vote Module -->
+        <div class="vote-box">
+            <!-- Voting options -->
+            <div class="vote-options">
+                <h4>Tomorrow place</h4>
+                <div class="option">
+                    <input type="radio" id="place1" name="place" value="Place 1" onchange="updateVoteCount()">
+                    <label for="place1">Place 1</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="place2" name="place" value="Place 2" onchange="updateVoteCount()">
+                    <label for="place2">Place 2</label>
+                </div>
+            </div>
+
+            <!-- Avatar of the person who created the vote -->
+            <img class="vote-avatar" src="image/me.png" alt="Avatar">
+        </div>
+
+        <!-- Vote Result -->
+        <div class="vote-result" id="voteResult">
+            <p>Place 1 Votes: <span id="place1Votes">0</span></p>
+            <p>Place 2 Votes: <span id="place2Votes">0</span></p>
+        </div>
+    </div>
+
+    <!-- Input Container -->
+    <div class="input-container">
+        <button class="mic-btn">🎤</button>
+        <input type="text" class="message-input" id="messageInput" placeholder="Input message...">
+        <button class="emoji-btn">😊</button>
+        <button class="send-btn" onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        let place1Votes = 0;
+        let place2Votes = 0;
+
+        function updateVoteCount() {
+            if (document.getElementById('place1').checked) {
+                place1Votes++;
+            } else if (document.getElementById('place2').checked) {
+                place2Votes++;
+            }
+
+            // Update vote counts in the UI
+            document.getElementById('place1Votes').textContent = place1Votes;
+            document.getElementById('place2Votes').textContent = place2Votes;
+        }
+
+        // Function to simulate sending a message
+        function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const messageText = input.value.trim();
+
+            if (messageText !== '') {
+                const chatContainer = document.querySelector('.chat-container');
+                const newMessage = document.createElement('div');
+                newMessage.classList.add('message', 'self');
+                
+                newMessage.innerHTML = `
+                    <div class="bubble">${messageText}</div>
+                    <img src="image/me.png" alt="Avatar">
+                `;
+
+                chatContainer.appendChild(newMessage);
+                input.value = '';
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+            }
+        }
+
+        // Function to navigate back to Vote2.html
+        function goBack() {
+            window.location.href = 'Vote2.html';
+        }
+    </script>
+</body>
+</html>
+

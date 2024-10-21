@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Container and sidebar */
+        .container {
+            display: flex;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .sidebar {
+            width: 20%;
+            background-color: #2C9ABD;
+            color: white;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .sidebar h2 {
+            margin: 0;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            font-size: 18px;
+            margin-bottom: 10px;
+            background-color: #3498db;
+        }
+
+        .sidebar a:hover {
+            background-color: #1f7a9f;
+        }
+
+        /* Main content area */
+        .main-content {
+            width: 80%;
+            position: relative;
+            padding: 20px;
+            background-color: white;
+            overflow: hidden;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .tabs button {
+            background-color: white;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .tabs button.active {
+            font-weight: bold;
+            border-bottom: 2px solid black;
+        }
+
+        .tabs .edit-btn {
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+
+        /* Image stack */
+        .image-stack {
+            display: none;
+            position: relative;
+            width: 80%;
+            margin: auto;
+            height: 500px;
+        }
+
+        .image-stack.active {
+            display: block;
+        }
+
+        .image-stack img {
+            position: relative;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease;
+            cursor: pointer;
+        }
+
+        .image-stack img:hover {
+            transform: scale(1.05);
+            z-index: 6;
+        }
+
+        /* Button for right slide */
+        .right-slide-btn {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar for day selection -->
+        <div class="sidebar" id="day-sidebar">
+            <h2>Days</h2>
+        </div>
+
+        <!-- Main content area -->
+        <div class="main-content">
+            <!-- Tabs section -->
+            <div class="tabs">
+                <div>
+                    <button id="scenicTab" class="active" onclick="showTab('scenic')">scenic spot</button>
+                    <button id="restaurantTab" onclick="showTab('restaurant')">restaurant</button>
+                </div>
+            </div>
+
+            <!-- Image stack for scenic spots -->
+            <div class="image-stack active" id="scenic-container">
+                <!-- Scenic spot images will be inserted dynamically -->
+            </div>
+
+            <!-- Image stack for restaurants -->
+            <div class="image-stack" id="restaurant-container">
+                <!-- Displaying restaurant images from the image folder -->
+                <img src="image/1.jpg" alt="Restaurant 1">
+                <img src="image/2.jpg" alt="Restaurant 2">
+            </div>
+
+            <!-- Right slide button -->
+            <button class="right-slide-btn" id="rightSlideBtn" onclick="showNextImage()">Next</button>
+        </div>
+    </div>
+
+    <script>
+        let currentImageIndex = 0;
+        let currentDayIndex = 0;
+        const images = {
+            0: ['image/12.jpg'], // Day 1
+            1: ['image/13.jpg'], // Day 2
+            2: ['image/14.jpg'], // Day 3
+            3: ['image/15.jpg'], // Day 4
+            4: ['image/16.jpg'], // Day 5
+            5: ['image/17.jpg'] // Day 6
+        };
+
+        function loadImagesForDays() {
+            // Get the number of days from localStorage
+            const days = localStorage.getItem('selectedDays') || 6; // Default to 6 days if not set
+            const daySidebar = document.getElementById('day-sidebar');
+            const scenicContainer = document.getElementById('scenic-container');
+
+            // Load day buttons
+            for (let i = 0; i < days; i++) {
+                const dayButton = document.createElement('a');
+                dayButton.href = '#';
+                dayButton.textContent = `DAY ${i + 1}`;
+                dayButton.onclick = () => showScenicImage(i); // Show corresponding scenic image
+                daySidebar.appendChild(dayButton);
+            }
+
+            // Show the first scenic image (Day 1) by default
+            showScenicImage(0);
+        }
+
+        function showScenicImage(dayIndex) {
+            currentImageIndex = 0; // Reset to first image
+            currentDayIndex = dayIndex; // Update current day index
+            const scenicContainer = document.getElementById('scenic-container');
+            scenicContainer.innerHTML = ''; // Clear previous image
+            const img = document.createElement('img');
+            img.src = images[dayIndex][currentImageIndex];
+            img.alt = `Scenic spot for Day ${dayIndex + 1}`;
+            img.onclick = () => redirectToDetail(dayIndex, currentImageIndex); // Redirect on click
+            scenicContainer.appendChild(img);
+            document.getElementById('rightSlideBtn').style.display = images[dayIndex].length > 1 ? 'block' : 'none'; // Show right slide button only if there are multiple images
+        }
+
+        function showNextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images[currentDayIndex].length;
+            const scenicContainer = document.getElementById('scenic-container');
+            scenicContainer.innerHTML = ''; 
+            const img = document.createElement('img');
+            img.src = images[currentDayIndex][currentImageIndex];
+            img.alt = `Scenic spot for Day ${currentDayIndex + 1}`;
+            img.onclick = () => redirectToDetail(currentDayIndex, currentImageIndex); 
+            scenicContainer.appendChild(img);
+        }
+
+        function redirectToDetail(dayIndex, imageIndex) {
+            window.location.href = `plan1_detail.html?day=${dayIndex + 1}&image=${imageIndex + 1}`;
+        }
+
+        function showTab(tab) {
+            const scenicContainer = document.getElementById('scenic-container');
+            const restaurantContainer = document.getElementById('restaurant-container');
+            const scenicTab = document.getElementById('scenicTab');
+            const restaurantTab = document.getElementById('restaurantTab');
+
+            if (tab === 'scenic') {
+                scenicContainer.classList.add('active');
+                restaurantContainer.classList.remove('active');
+                scenicTab.classList.add('active');
+                restaurantTab.classList.remove('active');
+            } else if (tab === 'restaurant') {
+                restaurantContainer.classList.add('active');
+                scenicContainer.classList.remove('active');
+                restaurantTab.classList.add('active');
+                scenicTab.classList.remove('active');
+            }
+        }
+
+        window.onload = loadImagesForDays;
+    </script>
+</body>
+</html>

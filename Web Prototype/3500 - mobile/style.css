@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: white;
+}
+
+/* 返回按钮固定在图片左上角 */
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 1000; /* 确保在图片上方 */
+    border: none;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* 图片模块 */
+.header-image {
+    position: relative;
+    width: 100%;
+    height: 500px; /* 固定图片高度 */
+    background-color: lightgray; /* 灰色背景替代图片 */
+    object-fit: cover;
+}
+
+/* 喜欢按钮 */
+.heart-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+.heart-btn img {
+    width: 30px;
+    height: 30px;
+}
+
+.heart-btn.active {
+    background-color: rgba(255, 0, 0, 0.2); /* 透明淡红色 */
+}
+
+
+/* 地点列表 */
+.place-list {
+    padding: 20px;
+}
+
+/* 地点列表项 */
+.place-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #e6e6e6;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* 地点图片 */
+.place-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.place-info {
+    flex-grow: 1;
+    padding-left: 10px;
+}
+
+.place-info h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.place-info p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* 位置图标 */
+.location-icon img {
+    width: 25px;
+    height: 30px;
+}
+
+/* 底部导航栏设置（保持不变） */
+.bottom-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    padding: 10px 0;
+    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.selected {
+    transform: translateY(-15px); /* 图标向上移动5px */
+    transition: transform 0.2s ease; /* 添加平滑过渡效果 */
+}
+.selected img {
+    filter: none;
+}
+.bottom-navigation {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .header-image {
+        height: 400px; /* 调整较小屏幕上的图片高度 */
+    }
+}
+
+@media (max-width: 400px) {
+    .header-image {
+        height: 350px;
+    }
+
+    .place-item {
+        padding: 8px;
+    }
+
+    .place-info h3 {
+        font-size: 16px;
+    }
+
+    .place-info p {
+        font-size: 12px;
+    }
+}
+

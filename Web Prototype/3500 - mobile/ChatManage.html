@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Chat</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        /* Header Container */
+        .header-container {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 60px;
+            background: linear-gradient(180deg, #037EA4 0%, #44AEC2 100%);
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        /* Back button */
+        .back-button {
+            width: 40px;
+            height: 40px;
+            background: url('image/left.jpg') no-repeat center center;
+            background-size: contain;
+            cursor: pointer;
+        }
+
+        /* Header Info */
+        .header-info {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+
+        /* Avatar */
+        .header-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: white;
+            margin-right: 10px;
+        }
+
+        /* Text for family name and status */
+        .header-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .header-text h1 {
+            font-size: 18px;
+            color: white;
+            margin: 0;
+        }
+
+        .header-text .status {
+            font-size: 12px;
+            color: #E0F4FC;
+            margin-top: 3px;
+        }
+
+        /* Chat list */
+        .chat-list {
+            padding: 100px 20px;
+        }
+
+        .chat-item {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer; /* Add cursor to indicate it's clickable */
+        }
+
+        .chat-item img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .chat-info {
+            flex-grow: 1;
+        }
+
+        .chat-info .family-name {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .chat-info .last-message {
+            font-size: 12px;
+            color: gray;
+            margin: 5px 0 0 0;
+        }
+
+        .message-time {
+            font-size: 12px;
+            color: gray;
+        }
+
+        /* Bottom navigation */
+        .bottom-navigation {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            background-color: white;
+            border-top: 1px solid #ccc;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .nav-icon {
+            text-align: center;
+        }
+
+        .nav-icon img {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>  
+        <div class="header-container">  
+            <div class="back-button" onclick="goBack()"></div> <!-- Back button -->
+            <div class="header-info">
+                <img class="header-avatar" src="image/chat4.png" alt="Avatar">  
+                <div class="header-text">
+                    <h1>Family Name</h1>  
+                    <span class="status">Typing...</span>  
+                </div>  
+            </div>
+        </div>  
+    </header>
+
+    <!-- Chat list section -->
+    <div class="chat-list">
+        <div class="chat-item" onclick="goToFamilyChat()">
+            <img src="image/chat4.png" alt="Family Photo">
+            <div class="chat-info">
+                <p class="family-name">Family Name</p>
+                <p class="last-message">Family Member 1: It seems all right</p>
+            </div>
+            <p class="message-time">17:53</p>
+        </div>
+    </div>
+
+    <!-- Bottom navigation with icons -->
+    <div class="bottom-navigation">
+        <div class="nav-icon"><a href="plan1_detail.html"><img src="image/1.png" alt="Home"></a></div>
+        <div class="nav-icon"><a href="place.html"><img src="image/2.png" alt="Search"></a></div>
+        <div class="nav-icon"><a href="ChatManage.html"><img src="image/4.png" alt="Chat"></a></div>
+        <div class="nav-icon"><img src="image/3.png" alt="Settings"></div>
+    </div>
+
+    <!-- JavaScript to handle the redirection -->
+    <script>
+        function goToFamilyChat() {
+            window.location.href = 'FamilyChat1.html'; // Redirects to FamilyChat1.html
+        }
+
+        function goBack() {
+            window.history.back(); // Goes back to the previous page
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+

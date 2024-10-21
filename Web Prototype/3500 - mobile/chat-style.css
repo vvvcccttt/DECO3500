@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 10px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+.chat-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-box {
+    height: 300px;
+    overflow-y: scroll;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.dad {
+    background-color: #d1e7dd;
+}
+
+.mom {
+    background-color: #fce4ec;
+}
+
+.grandpa {
+    background-color: #fff3cd;
+}
+
+.grandma {
+    background-color: #cce5ff;
+}
+
+.boy {
+    background-color: #d4edda;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.message-input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+.send-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.icon:hover {
+    background-color: #e0e0e0;
+}
+
+.icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.icon-text {
+    margin-top: 5px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.icon-text a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* 手机适配 */
+@media (max-width: 768px) {
+    .chat-container {
+        width: 100%;
+    }
+
+    .icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .icon img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .icon-text {
+        font-size: 10px;
+    }
+
+    .message-input, .send-btn {
+        padding: 8px;
+    }
+
+    .chat-box {
+        height: 200px;
+    }
+}
+
+/* 小屏适配 */
+@media (max-width: 480px) {
+    .icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .icon img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .icon-text {
+        font-size: 8px;
+    }
+
+    .message-input {
+        padding: 6px;
+    }
+
+    .send-btn {
+        padding: 8px 15px;
+    }
+
+    .chat-box {
+        height: 150px;
+    }
+}

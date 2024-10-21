@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            width: 360px;
+            height: 640px;
+            background-image: url('image/index1.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            position: relative;
+        }
+
+        /* Title styling */
+        .container h1 {
+            color: white;
+            font-size: 36px;
+            margin-bottom: 40px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container button {
+            width: 80%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .login-btn {
+            background-color: #00b5ad;
+            color: white;
+        }
+
+        .join-btn {
+            background-color: white;
+            color: black;
+            border: 1px solid #ccc;
+        }
+
+        .signup-text {
+            color: white;
+            font-size: 14px;
+        }
+
+        .signup-text a {
+            color: #f7c143;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .signup-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* Styling for the question mark icon */
+        .question-mark {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Styling for the popup modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Question Mark Icon -->
+        <span class="question-mark" id="help-icon">?</span>
+
+        <!-- Title "Famtrip" -->
+        <h1>Famtrip</h1>
+        
+        <!-- Login Button -->
+        <button class="login-btn" onclick="location.href='login.html'">Login</button>
+        
+        <!-- Join Button -->
+        <button class="join-btn" onclick="location.href='login.html'">Join</button>
+        
+        <!-- Sign Up Text -->
+        <p class="signup-text">Don't have an account? Let's <a href="sign_in.html">Sign up</a></p>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Privacy Policy.</p>
+            <p>We may collect the following types of information when using the Application:</p>
+            <p>Personally Identifiable Information: such as your name, email address, phone number.Device information. Location Information</p>
+            <p>The information we collect will be used for the following purposes:
+                Providing and maintaining the proper functioning of the Application;
+                Improving the functionality and user experience of the Application;
+                Analyzing user behavior and optimizing our products and services;</p>
+            <p>We do not sell or rent your personal information to third parties. We only share your information when required by law, business transfers, and third party service providers.</p>
+        </div>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal (question mark)
+        var helpIcon = document.getElementById("help-icon");
+
+        // Get the <span> element that closes the modal
+        var closeBtn = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the question mark, open the modal
+        helpIcon.onclick = function() {
+            modal.style.display = "flex";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

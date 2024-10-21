@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Preferences</title>
+    <style>
+        .container {
+            width: 320px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); 
+            border-radius: 10px;
+            text-align: center;
+            background-image: url('image/9.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+        }
+
+        .header {
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .options-group {
+            margin-bottom: 20px;
+        }
+
+        .options-group div {
+            margin-bottom: 10px;
+        }
+
+        .toggle-option {
+            display: inline-block;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .toggle-option.active {
+            background-color: #00a0e9;
+            color: white;
+        }
+
+        .save-button {
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function toggleOption(optionId) {
+            const element = document.getElementById(optionId);
+            element.classList.toggle('active');
+        }
+
+        function savePreferences() {
+            const selectedOptions = [];
+            document.querySelectorAll('.toggle-option.active').forEach(option => {
+                selectedOptions.push(option.innerText);
+            });
+
+            // 保存选择的内容到 localStorage
+            localStorage.setItem('selectedRoomOptions', selectedOptions.join(', '));
+
+            // 跳转回 input2.html 页面
+            window.location.href = 'input2.html';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Room</h1>
+        </div>
+
+        <div class="options-group">
+            <h3>Accommodation Type</h3>
+            <div id="accommodation-options">
+                <div id="hotel" class="toggle-option" onclick="toggleOption('hotel')">Hotel</div>
+                <div id="bnb" class="toggle-option" onclick="toggleOption('bnb')">Bed and Breakfast (B&B)</div>
+                <div id="hostel" class="toggle-option" onclick="toggleOption('hostel')">Hostel</div>
+                <div id="rv" class="toggle-option" onclick="toggleOption('rv')">RV Camping</div>
+            </div>
+        </div>
+
+        <div class="options-group">
+            <h3>Hotel Location</h3>
+            <div id="location-options">
+                <div id="city" class="toggle-option" onclick="toggleOption('city')">City Center</div>
+                <div id="tourist" class="toggle-option" onclick="toggleOption('tourist')">Tourist Attractions</div>
+                <div id="nature" class="toggle-option" onclick="toggleOption('nature')">Close to Nature</div>
+            </div>
+        </div>
+
+        <button class="save-button" onclick="savePreferences()">Save</button>
+    </div>
+</body>
+</html>

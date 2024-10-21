@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Preferences</title>
+    <link rel="stylesheet" href="styles2.css">
+    <script>
+        function saveDaysAndRedirect() {
+            const days = document.getElementById('days').value;
+            // Store days in localStorage
+            localStorage.setItem('selectedDays', days);
+            
+            window.location.href = 'user_rank.html';
+        }
+
+        window.onload = function() {
+            loadSelectedRoomOptions();
+            loadSelectedFoodOptions();
+            loadSelectedPlaceOptions();
+        }
+
+        function loadSelectedPlaceOptions() {
+            const selectedPlaceOptions = localStorage.getItem('selectedPlaceOptions');
+            if (selectedPlaceOptions) {
+                document.getElementById('place').value = selectedPlaceOptions;
+            }
+        }
+
+        function loadSelectedRoomOptions() {
+            const selectedRoomOptions = localStorage.getItem('selectedRoomOptions');
+            if (selectedRoomOptions) {
+                document.getElementById('room').value = selectedRoomOptions;
+            }
+        }
+
+        function loadSelectedFoodOptions() {
+            const selectedFoodOptions = localStorage.getItem('selectedFoodOptions');
+            if (selectedFoodOptions) {
+                document.getElementById('food').value = selectedFoodOptions;
+            }
+        }
+
+        function toggleTooltip() {
+            const tooltip = document.getElementById('price-tooltip');
+            tooltip.style.display = tooltip.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function closeTooltip() {
+            document.getElementById('price-tooltip').style.display = 'none';
+        }
+
+        function redirectToFoodPage() {
+            window.location.href = 'food.html';
+        }
+
+        function redirectToRoomPage() {
+            window.location.href = 'room.html';
+        }
+
+        function redirectToPlacePage() {
+            window.location.href = 'place_pre.html';
+        }
+
+        function redirectToUserRank() {
+            window.location.href = 'user_rank.html';
+        }
+    </script>
+    <style>
+        .tooltip {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 250px;
+            z-index: 1;
+        }
+
+        .close-button {
+            background-color: #ddd;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            float: right;
+        }
+
+        .question-mark {
+            cursor: pointer;
+            color: blue;
+            font-size: 20px;
+            margin-left: 5px;
+        }
+
+        .question-mark:hover {
+            color: darkblue;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .input-group input {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <p>Hi~</p>
+            <p>Input your preferences</p>
+        </div>
+
+        <div class="form">
+            <div class="input-group">
+                <label for="num">Num</label>
+                <input type="number" id="num" min="1" value="4">
+            </div>
+            <div class="input-group">
+                <label for="days">Day</label>
+                <input type="number" id="days" min="1" value="6">
+            </div>
+            <div class="input-group">
+                <label for="price">Price</label>
+                <input type="text" id="price" placeholder="Enter price budget">
+                <!-- Add question mark next to the price input -->
+                <span class="question-mark" onclick="toggleTooltip()">?</span>
+
+                <!-- Tooltip content -->
+                <div id="price-tooltip" class="tooltip">
+                    <button class="close-button" onclick="closeTooltip()">X</button>
+                    <p>Recommanded price(example)</p>
+                    <ul>
+                        <li>2 people, 3 days in Sydney: $900 - $1200</li>
+                        <li>4 people, 5 days in Sydney: $2400 - $3600</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="room">Room</label>
+                <input type="text" id="room" placeholder="Enter room type" onfocus="redirectToRoomPage()">
+            </div>
+            <div class="input-group">
+                <label for="food">Food</label>
+                <input type="text" id="food" placeholder="Enter food preference" onfocus="redirectToFoodPage()">
+            </div>
+            <div class="input-group">
+                <label for="place">Place</label>
+                <input type="text" id="place" placeholder="Enter place" onfocus="redirectToPlacePage()">
+            </div>
+
+            <!-- Create Button -->
+            <button class="save-button" onclick="saveDaysAndRedirect()">Create</button> 
+        </div>
+    </div>
+</body>
+</html>
