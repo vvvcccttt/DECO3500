@@ -2,6 +2,9 @@ The "3500 - mobile" folder contains the team's web prototype content. The "image
 
 Afterward, users can follow the instructions provided in the [Introduction to How the Prototype is Used](https://github.com/vvvcccttt/DECO3500/wiki/%22FamTrip%22-Design-Process#high-fidelity-prototypes) to interact with the pages and fully experience all the features of the four parts of the web prototype.
 
+
+Additional materials under the Web Prototype folder：
+
 The **Interaction and Technical Details 1.md** document primarily focuses on the interaction and technical details for **Prototype Part A**, **Part B**, and **Part D** (excluding the navigation and route planning features). It details how these sections of the prototype operate, covering their user interactions and the technical implementations behind those functionalities.
 
 The **Interaction and Technical Details 2.md** document is dedicated to explaining the interaction and technical details of **Prototype Part C**. 
