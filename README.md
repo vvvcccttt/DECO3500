@@ -1,6 +1,6 @@
 # DECO3500
 ## The Repository 
-The repository contains folders such as **"Persona,"** **"Team_Charter,"** **"Exhibition Materials,"**  **"Team_Presentation_1_PowerPoint,"** and **"Prototype."** 
+The repository contains folders such as **"Persona,"** **"Team_Charter,"** **"Exhibition Materials,"**  **"Team_Presentation_1_PowerPoint,"** **"Web Prototype"**  and **"Prototype."** 
 
 The **"Persona"** folder includes the "user personas" we created for the users. 
 
@@ -11,6 +11,8 @@ The **"Team_Presentation_1_PowerPoint"** folder showcases the proposal slides, w
 The **"Prototype"** folder displays images of sketches, low-fidelity prototypes, medium-fidelity prototypes, and high-fidelity prototypes (Picture1, Picture2, Picture3, Picture4).
 
 The **"Exhibition Materials"** folder includes a poster.
+
+The **"Web Prototype"** folder contains the team's web prototype and related design materials.
 
 ## Overview of Hyperlinks in Document Structure
 [ Document Structure Page](https://github.com/vvvcccttt/DECO3500/wiki/Document-Structure-Page)
