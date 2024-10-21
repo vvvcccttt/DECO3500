@@ -47,7 +47,7 @@ Part D is made up of the "Road" interface, "Recommend" interface, and "Place Rec
 **Part D:**
 ![Part D](https://github.com/vvvcccttt/DECO3500/blob/main/prototype/Picture3.png)
 
-
+[Web Prototype](https://github.com/vvvcccttt/DECO3500/tree/main/Web%20Prototype)
 
 
 (In the "Web Prototype" folder)The "3500 - mobile" folder contains the team's web prototype content. The "image" folder within "3500 - mobile" contains the images and icons used for the prototype design. The "map" folder within "3500 - mobile" contains the functional code and some images needed for Part D of the prototype (including the "Road" Interface, "Recommend" Interface, and "Place Recommend" Interface). To use the team's web prototype, you need to click on the "index.html" file within the "3500 - mobile" folder, which serves as the initial interface of the prototype. Clicking the question mark in the top right corner of the initial interface will trigger the privacy policy, and the user must agree to the privacy policy before continuing to use the prototype.
