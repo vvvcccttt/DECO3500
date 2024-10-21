@@ -17,10 +17,11 @@ The **"Web Prototype"** folder contains the team's web prototype and related des
 ## Overview of Hyperlinks in Document Structure
 [ Document Structure Page](https://github.com/vvvcccttt/DECO3500/wiki/Document-Structure-Page)
 
-[Design Process](https://github.com/vvvcccttt/DECO3500/wiki/%22FamTrip%22-Design-Process)
 
 ## Overview of Hyperlinks in the Project
 [ Project Overview](https://github.com/vvvcccttt/DECO3500/wiki)
+
+[Design Process](https://github.com/vvvcccttt/DECO3500/wiki/%22FamTrip%22-Design-Process)
 
 ## Deployment and Usage of the Prototype
 
