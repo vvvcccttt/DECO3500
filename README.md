@@ -10,7 +10,7 @@ The **"Team_Presentation_1_PowerPoint"** folder showcases the proposal slides, w
 
 The **"Prototype"** folder displays images of sketches, low-fidelity prototypes, medium-fidelity prototypes, and high-fidelity prototypes (Picture1, Picture2, Picture3, Picture4).
 
-The **"Exhibition Materials"** folder includes a poster.
+The **"Exhibition Materials"** folder includes a poster and a video.
 
 The **"Web Prototype"** folder contains the team's web prototype and related design materials.
 
