@@ -1,11 +1,11 @@
 
 Family Chat Webpage
 
-Overview
+**Overview**
 
 This section is the family chat interface built into the family travel, which mainly has voting functions, chat functions, and the ability to view the distance between family members. In addition to the vote and map interfaces, other webpages include a title with a back button, a page for viewing the chat list of recent conversations, and a bottom navigation bar for accessing various functions. The vote can create multiple voting options and also record the number of votes for each option at any time. The map interface shows the distance and approximate location of other family members.
 
-Function
+**Function**
 
 Title container: Contains the back button, family avatars, and chat information.
 
@@ -15,7 +15,7 @@ Bottom navigation bar: Provides shortcuts to other parts of the application (suc
 
 Interactive JavaScript functions: The webpage contains JavaScript functions for navigation, such as returning to the previous page or entering a specific chat, as well as counting functions of the vote interface.
 
-File Structure
+**File Structure**
 
 HTML Elements: The HTML code is divided into multiple sections to create a consistent layout:
 
@@ -31,7 +31,7 @@ Header Styles: Creates a gradient background for the title with avatars and fami
 
 Bottom Navigation: A simple design with icons for easy navigation.
 
-Instructions
+**Instructions**
 
 Back Button: Click the back button (left arrow image) in the header to navigate to the previous page.
 
@@ -43,7 +43,7 @@ Voting creation: Click the + button to create a new option, and click create vot
 
 Voting record: After clicking any of the created voting options, there will be a real-time count of each option in the chat interface, showing how many family members voted for each option.
 
-Pictures
+**Pictures**
 
 The pictures are used for the back button, family avatars, and bottom navigation icons.
 
@@ -55,11 +55,11 @@ Family avatar and chat list icon: chat4.png
 
 Bottom navigation icons: 1.png, 2.png, 3.png, 4.png
 
-Compatibility
+**Compatibility**
 
 The webpage is designed to be responsive and compatible with various screen sizes, making it easy to use on mobile and desktop devices.
 
-Future improvements
+**Future improvements**
 
 Chat function: Use WebSocket to implement real-time chat for seamless communication.
 
