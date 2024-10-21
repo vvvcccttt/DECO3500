@@ -55,3 +55,11 @@ Part D is made up of the "Road" interface, "Recommend" interface, and "Place Rec
 Afterward, users can follow the instructions provided in the [Introduction to How the Prototype is Used](https://github.com/vvvcccttt/DECO3500/wiki/%22FamTrip%22-Design-Process#high-fidelity-prototypes) to interact with the pages and fully experience all the features of the four parts of the web prototype.
 
 From the perspective of prototype deployment, the system uses HTML, CSS, and JavaScript to create frontend interactions and dynamic content display, offering various interactions through features such as maps and voting. HTML is responsible for creating the structure of the web pages, while CSS is used for styling the pages and implementing responsive layouts. JavaScript mainly handles the interactive logic. On the other hand, the deployment environment is a static hosting service (GitHub), and users can also run the files locally on their own computers after downloading them.
+
+## Promotional material##
+
+- [Web Prototype](https://github.com/vvvcccttt/DECO3500/tree/main/Web%20Prototype) 
+
+- [Poster](https://github.com/vvvcccttt/DECO3500/blob/main/Exhibition%20Materials/Poster_1.png) 
+
+- [Vedio](https://github.com/vvvcccttt/DECO3500/blob/main/Exhibition%20Materials/Vedio.mp4) 
